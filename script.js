@@ -37,27 +37,11 @@ console.log(reverseString('omaha'));
  // 3.
  // Write a function that takes an array of strings,
  // and returns the longest string in the array
- let foods = ["Burger", "Salad", "Lasagna", "Sushi", "Meatloaf"];
-
-//  const getLongestString = (words) => {
-//   const longestWord = () => {
-//       let longestWord = " ";
-//       for (let i = 0; i < words.length; i++) {
-//               const element = words[i];
-//           for (let word = i -1; word >= 0; word--) {
-//               if ((words[i].length > words[word].length) && (words[i] > 1)){
-//                   longestWord = words[i];
-//                   // longestWord = longestWord.toString();
-//                   // return longestWord;
-//               };
-//           };
-//       };
-//       console.log(`The longest word is \"${longestWord}.\" It contains ${longestWord.length} characters.`);
-//   };
-// getLongestString(Array);
-
+let foods = ["Burger", "Salad", "Lasagna", "Sushi", "Meatloaf"];
 let longest = foods.reduce((a, b) => a.length > b.length ? a : b, '');
 console.log(longest);
+
+
 
 // // 4.
 // // Using Reduce,
@@ -66,15 +50,21 @@ console.log(longest);
 // // In other words, the total of all the prices in the array
 // // of objects
 // // The output should eqaute to 227005
-// let wishlist = [
-//   { title: "tesla", price: 90000 },
-//   { title: "tesla", price: 45000 },
-//   { title: "tesla", price: 5 },
-//   { title: "tesla", price: 2000 },
-//   { title: "tesla", price: 90000 },
-// ];
-// function shop(arr) { }
-// console.log(shop(wishlist));
+let wishlist = [
+  { title: "tesla", price: 90000 },
+  { title: "tesla", price: 45000 },
+  { title: "tesla", price: 5 },
+  { title: "tesla", price: 2000 },
+  { title: "tesla", price: 90000 },
+];
+function shop(arr) {
+  let initialValue = 0
+  let sum = [{price: 90000}, {price: 45000}, {price: 5}, {price: 2000}, {price: 90000}].reduce(
+    (previousValue, currentValue) => previousValue + currentValue.x
+    , initialValue
+  );
+};
+console.log(shop(wishlist));
 
 
 
@@ -89,11 +79,17 @@ console.log(longest);
 
 
 
-// //6. OOP has 4 pillars and we learned about each in this phase. 
-// //Choose the pillar you are most comfortable with 
-// //and explain it in simple terms with an example.
-// //Also, if you cannot explain any of them, we have failed as 
-// //instructors and you will be banished to the nether realms.
+ //6. OOP has 4 pillars and we learned about each in this phase. 
+//Choose the pillar you are most comfortable with 
+//and explain it in simple terms with an example.
+//Also, if you cannot explain any of them, we have failed as 
+//instructors and you will be banished to the nether realms.
+      // The 4 pillars of OOP are Abstraction, Encapsulation, Inheritance and Polymorphism. Encapsulation is the idea of bundndling up 
+      // attributes (data) and methods into an Object, like a class. It allows the object to be able to reference itself when it needs to access 
+      // data or functions to manipulate data. It also allows objects/classes to hide variables data from other objects providing for better safety meaures.
+      // This prevents other classes/objects from inadverdently changing properties in another object/class unless otherwise allowed to by the class's public methods and data.
+
+
 
 
 // /*  7.
@@ -106,7 +102,13 @@ console.log(longest);
 //  * then return the new array
 //  * Be sure to use map()!
 //  */
-// const flipBool = (arr) => { };
+let boolarray = [true, false];
+const flipBool = (bools) => {
+  return bools.map(function(bool) {return !bool})
+};
+console.log(flipBool(boolarray));
+
+
 
 // // 8.
 // //FEAST OR FAMINE

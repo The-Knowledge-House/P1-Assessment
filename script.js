@@ -37,14 +37,27 @@ console.log(reverseString('omaha'));
  // 3.
  // Write a function that takes an array of strings,
  // and returns the longest string in the array
-function longestString (array) {
-  for (let i = 0; i < array.length; i++) {
-    const element = array[i];
-    if 
-  }
-};
+ let foods = ["Burger", "Salad", "Lasagna", "Sushi", "Meatloaf"];
 
+//  const getLongestString = (words) => {
+//   const longestWord = () => {
+//       let longestWord = " ";
+//       for (let i = 0; i < words.length; i++) {
+//               const element = words[i];
+//           for (let word = i -1; word >= 0; word--) {
+//               if ((words[i].length > words[word].length) && (words[i] > 1)){
+//                   longestWord = words[i];
+//                   // longestWord = longestWord.toString();
+//                   // return longestWord;
+//               };
+//           };
+//       };
+//       console.log(`The longest word is \"${longestWord}.\" It contains ${longestWord.length} characters.`);
+//   };
+// getLongestString(Array);
 
+let longest = foods.reduce((a, b) => a.length > b.length ? a : b, '');
+console.log(longest);
 
 // // 4.
 // // Using Reduce,

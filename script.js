@@ -3,6 +3,7 @@
 // output =>
 //  { brand: 'Toyota', model: 'camry', type: 'sedan' },
 //   { brand: 'Hyundai', model: 'Sonata', type: 'sedan' }
+
 const carBrands = [
   { brand: "Ford", model: "mustang", type: "convertible" },
   { brand: "Toyota", model: "camry", type: "sedan" },
@@ -11,6 +12,9 @@ const carBrands = [
   { brand: "Jeep", model: "wrangler", type: "suv" },
   { brand: "Nissan", model: "frontier", type: "pickup" },
 ];
+const sedans = carBrands.filter((el) => el.type == "sedan")
+
+console.log(sedans)
 
 /* 2.
  * reverseString takes a string
@@ -18,9 +22,29 @@ const carBrands = [
  * e.g., reverseString('cat') => 'tac'
  */
 
+function reverseString(string) {
+  let newString = "";
+  for (let i = string.length - 1; i >= 0; i--) {
+    newString += string[i];
+  }
+  return newString;
+}
+
+console.log(reverseString("Pokemon"));
+
 // 3.
 // Write a function that takes an array of strings,
 // and returns the longest string in the array
+
+function longest_string(str_ara) {
+  let max = str_ara[0].length;
+  str_ara.map(v => max = Math.max(max, v.length));
+  result = str_ara.filter(v => v.length == max);
+  return result;
+}
+
+console.log(longest_string(['abs', 'eggrolls', 'anna', 'jerry',
+  'seinfield', 'pokemon']))
 
 // 4.
 // Using Reduce,
@@ -29,6 +53,7 @@ const carBrands = [
 // In other words, the total of all the prices in the array
 // of objects
 // The output should eqaute to 227005
+
 let wishlist = [
   { title: "tesla", price: 90000 },
   { title: "tesla", price: 45000 },
@@ -36,7 +61,10 @@ let wishlist = [
   { title: "tesla", price: 2000 },
   { title: "tesla", price: 90000 },
 ];
-function shop(arr) {}
+function shop(arr) {
+  let total = arr.reduce((acc, cur) => acc + cur.price, 0);
+  return total;
+}
 console.log(shop(wishlist));
 
 // 5.
@@ -52,6 +80,10 @@ console.log(shop(wishlist));
 //Also, if you cannot explain any of them, we have failed as 
 //instructors and you will be banished to the nether realms.
 
+// Inheritance in object oriented programming allows for one object to use the 
+// porperties of another object. An example would be if animals are a class and then
+// birds and lions are another class that is able to use the same properties that the animal class can. 
+
 
 /*  7.
  * flipBool takes an array of Boolean values
@@ -63,7 +95,13 @@ console.log(shop(wishlist));
  * then return the new array
  * Be sure to use map()!
  */
-const flipBool = (arr) => {};
+
+const flipBool = (arr) => {
+  return arr.map(function (bool) {
+    return !bool
+  })
+};
+console.log(flipBool([true, false, true, true, false]))
 
 // 8.
 //FEAST OR FAMINE
@@ -73,3 +111,15 @@ const flipBool = (arr) => {};
 // > i.e.:
 // > input => `"great blue heron", "garlic naan"`
 // > output => `"gn"`
+
+
+function firstAndLast(animal, food) {
+  if (animal.charAt(0) === food.charAt(0) && animal.charAt(animal.length - 1) === food.charAt(food.length - 1)) {
+    return (animal.charAt(0) + animal.charAt(animal.length - 1));
+  }
+  else {
+    return false;
+  }
+}
+console.log(firstAndLast("great blue heron", "garlic naan"));
+console.log(firstAndLast("great blue heron", "cream"));

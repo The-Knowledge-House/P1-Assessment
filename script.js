@@ -38,17 +38,17 @@ console.log(reverseString('cat'));
 
 function longestString(arr) {
   initialVal = 0; 
-  longestString = ""; 
+  longString = ""; 
   
   for ( let i =0; i < arr.length; i++) {
       if (arr[i].length > initialVal) {
           initialVal = arr[i].length; 
-          longestString = arr[i]; 
+          longString = arr[i]; 
   
       }
   
   }
-  return longestString
+  return longString
 
 }
 let randomArr = ["Jon", "Wren", "Diamonique"]; 

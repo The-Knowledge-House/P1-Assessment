@@ -69,11 +69,16 @@ console.log(shop(wishlist));
 
 
 
-// // 5.
-// //Explain recursion in your own words,
-// // give an example of a recursive algorithm, and explain how it works
-// //Make sure to detail the steps that make up a recursive algorithm
-// // A detailed explanation.
+// 5.
+//Explain recursion in your own words,
+// give an example of a recursive algorithm, and explain how it works
+//Make sure to detail the steps that make up a recursive algorithm
+// A detailed explanation.
+    From my understanding, recursion is when a function keeps calling itself until a condition is met or fulfilled. The best way I can explain recursion is by using an analogy,
+    think of it as if you was a paper boy doing your routes. You have to go pick up the paper from the printer (or whever you go), fill up your carry bag (or trunk) and then go deliver door-to-door.
+    Once you did your first route, you go back to the pick up more paper and go door-to-door again. The recurion is occurring every time you go back and pick up more paper to finish and/or continue routes,
+    the difference is as you go make your rounds, you have less routes to make and less paper to pick up until you no longer have to pick up paper or deliver door-to-door. Every time you go back to re-up
+    on paper you're completing a route and taking it off your list untill  you no more routes left.
 
 
 
@@ -118,3 +123,6 @@ console.log(flipBool(boolarray));
 // // > i.e.:
 // // > input => `"great blue heron", "garlic naan"`
 // // > output => `"gn"`
+function matchFirst (feast, famine) {
+
+}

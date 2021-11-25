@@ -12,15 +12,41 @@ const carBrands = [
   { brand: "Nissan", model: "frontier", type: "pickup" },
 ];
 
+const noSedan = carBrands.filter(checkBrand);
+
+function checkBrand(brandCar) {
+  return brandCar >= 'sedan';
+
+}
+
+console.log(brandCar);
+
 /* 2.
  * reverseString takes a string
  * and should return the reverse of the string, you cannot use .reverse method
  * e.g., reverseString('cat') => 'tac'
  */
 
+function reverseString(s){
+  return s.split("").reverse().join("");
+}
+console.log(reverseString("cat"));
+
 // 3.
 // Write a function that takes an array of strings,
 // and returns the longest string in the array
+//Since all the words are in one string together, how would you solve this? 
+function longer(champ, contender) {
+  return (contender.length > champ.length) ? contender : champ;
+}
+
+function longestWord(str) {
+  var words = str.split(' ');
+  return words.reduce(longer);
+}
+
+console.log(longestWord("her husband is serving a three-year sentence for fraud"));
+
 
 // 4.
 // Using Reduce,
@@ -36,14 +62,28 @@ let wishlist = [
   { title: "tesla", price: 2000 },
   { title: "tesla", price: 90000 },
 ];
-function shop(arr) {}
-console.log(shop(wishlist));
+
+const arr = [90000, 45000, 5, 2000, 90000];
+
+let total = arr.reduce(function shop(arr) {
+  const sum = 0;
+  for (var prop in obj) {
+    if (obj[prop] % 2 === 0) sum += obj[prop];
+    if (obj[prop] instanceof Object) sum += nestedEvenSum(obj[prop]);
+  }
+  return sum;
+});
+//code will not work because I need to isolate price first before
+//using reduce
+
+
 
 // 5.
-//Explain recursion in your own words,
+// Explain recursion in your own words,
 // give an example of a recursive algorithm, and explain how it works
-//Make sure to detail the steps that make up a recursive algorithm
+// Make sure to detail the steps that make up a recursive algorithm
 // A detailed explanation.
+let explanation = ("Recursion is a process where we can repeat string/arrays/objects within a function");
 
 
 //6. OOP has 4 pillars and we learned about each in this phase. 
@@ -63,7 +103,9 @@ console.log(shop(wishlist));
  * then return the new array
  * Be sure to use map()!
  */
-const flipBool = (arr) => {};
+const flipBool = (arr) => {
+
+};
 
 // 8.
 //FEAST OR FAMINE
@@ -73,3 +115,20 @@ const flipBool = (arr) => {};
 // > i.e.:
 // > input => `"great blue heron", "garlic naan"`
 // > output => `"gn"`
+function firstLetterWord(str) {
+  let result = "";
+  let v = true;
+
+  for (let i = 0; i < str.length; i++) {    
+    if (str[i] == ' '){          
+      v = true;
+     } else if (str[i] != ' ' && v == true) {          
+      result += (str[i]);          
+      v = false;       
+    }
+    } return result;
+    }     
+
+let str = ("great blue heron", "garlic naan");
+
+console.log(firstLetterWord(str));

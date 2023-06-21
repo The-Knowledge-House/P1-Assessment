@@ -124,5 +124,4 @@ console.log(flipBool(boolarray));
 // // > input => `"great blue heron", "garlic naan"`
 // // > output => `"gn"`
 function matchFirst (feast, famine) {
-
 }
